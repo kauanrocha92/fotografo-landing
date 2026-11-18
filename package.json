@@ -1,0 +1,1 @@
+{"name":"fotografo-landing","private":true,"version":"0.1.0","type":"module","scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},"devDependencies":{"vite":"^5.4.21"},"dependencies":{"@fontsource-variable/hanken-grotesk":"^5.3.0","@fontsource-variable/jost":"^5.3.0","gsap":"^3.15.1","lenis":"^1.3.27"}}

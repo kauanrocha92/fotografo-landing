@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F1EFEA">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script>
+      // Esconde os estados iniciais das animações só quando há JS e movimento permitido.
+      // Se o script principal não marcar a página como pronta em 3s, tudo aparece.
+      (function () {
+        var d = document.documentElement
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion')
+        d.classList.add('js')
+        setTimeout(function () { if (!d.classList.contains('ready')) d.classList.remove('motion') }, 3000)
+      })()
+    </script>
+    <!--head-->
+  </head>
+  <body>
+    <!--app-->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

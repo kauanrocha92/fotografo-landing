@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T00:00:00Z",
+  "title": "Design System: Concreto",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Graphite Ink", "canonical": "#0f0f0e", "tonalRamp": ["#0f0f0e", "#1f1f1d", "#33332f", "#4a4945", "#64635e", "#83827c", "#aaa8a2", "#d6d4ce"] },
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f1efea", "tonalRamp": ["#2b2a27", "#4a4843", "#6c6a64", "#918e87", "#b5b2ab", "#d3d0c9", "#e6e3dd", "#f1efea"] },
+      "gray": { "role": "neutral", "displayName": "Stone Gray", "canonical": "#5c5b57", "tonalRamp": ["#1a1a18", "#2e2d2b", "#44433f", "#5c5b57", "#76756f", "#93918b", "#b4b2ac", "#d8d6d0"] },
+      "gray-soft": { "role": "neutral", "displayName": "Ash Gray", "canonical": "#8c8b86", "tonalRamp": ["#1d1d1b", "#33322f", "#4c4b47", "#666561", "#8c8b86", "#a6a5a0", "#c2c1bc", "#e0dfdb"] },
+      "gray-ink": { "role": "neutral", "displayName": "Ink Gray", "canonical": "#a6a49e", "tonalRamp": ["#1e1d1b", "#353431", "#4f4e4a", "#6b6a65", "#8a8883", "#a6a49e", "#c6c4bf", "#e4e3df"] },
+      "vermilion": { "role": "primary", "displayName": "Vermilion", "canonical": "#c4391f", "tonalRamp": ["#3a0f07", "#5e180c", "#862313", "#c4391f", "#d9573d", "#e8836e", "#f2b2a4", "#fadbd3"] },
+      "vermilion-ink": { "role": "primary", "displayName": "Vermilion on Ink", "canonical": "#e0573c", "tonalRamp": ["#40140b", "#682012", "#92301c", "#bd4127", "#e0573c", "#ea8169", "#f3ad9c", "#fad7ce"] },
+      "line": { "role": "neutral", "displayName": "Grid Line", "canonical": "rgb(15 15 14 / 0.075)" },
+      "line-strong": { "role": "neutral", "displayName": "Rule", "canonical": "rgb(15 15 14 / 0.18)" }
+    },
+    "typographyMeta": {
+      "display-hero": { "displayName": "Hero Display", "purpose": "Hero words and hero-scale section titles; lowercase, stacked, offset by whole modules." },
+      "display": { "displayName": "Display", "purpose": "Smaller section titles, project titles, service names, menu list; lowercase." },
+      "headline": { "displayName": "Headline", "purpose": "Section-level headings at weight 680: about name, step titles, form title." },
+      "title": { "displayName": "Title", "purpose": "Light Jost voice at 500: category filters and testimonial quotes." },
+      "lead": { "displayName": "Lead", "purpose": "Hero claim, ledes, intros; 24 to 46ch." },
+      "body": { "displayName": "Body", "purpose": "Running text, 36 to 44ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons and underlined links." },
+      "small": { "displayName": "Small", "purpose": "Notes, privacy, legal." },
+      "module-number": { "displayName": "Module Number", "purpose": "01 to 12 numbers on the grid lines, in the rule color." }
+    },
+    "shadows": [
+      { "name": "header-hairline", "value": "0 1px 0 rgb(15 15 14 / 0.18)", "purpose": "Separates the solid header from content; a rule, not elevation." },
+      { "name": "ghost-line", "value": "inset 0 0 0 1px rgb(241 239 234 / 0.5)", "purpose": "Outline button on photos and ink." },
+      { "name": "photo-scrim", "value": "linear-gradient(to top, rgb(15 15 14 / 0.82), rgb(15 15 14 / 0.35) 70%, transparent)", "purpose": "Legibility scrim for text over photographs only (captions, CTA)." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default (expo out) for reveals, underlines, button fills, hovers." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.18, 1)", "purpose": "Expo in-out for slats, clip wipes, menu, FLIP recomposition." },
+      { "name": "slat-reveal", "value": "slats scaleY 1 to 0, 1.2s expo.inOut, stagger 0.07s per column; image 1.18 to 1 over 2s", "purpose": "Photos uncovered one grid column at a time, triggered at top 80%." },
+      { "name": "word-rise", "value": "translateY(105%) to 0 inside overflow mask, 1.2s expo.out, stagger 0.07s", "purpose": "Display titles rise word by word; hero 1.25s, stagger 0.11s." },
+      { "name": "rise", "value": "opacity 0, translateY(28px) to rest, 1.1s expo.out, batch stagger 0.09s", "purpose": "Secondary text and blocks." },
+      { "name": "clip-wipe", "value": "clip-path inset(100% 0 0 0) to inset(0), 1.3s expo.inOut; image 1.25 to 1", "purpose": "Portfolio photos and hero slide change (from the right, 1.5s, every 5.6s)." },
+      { "name": "ink-open", "value": "clip-path inset(0 var(--m)) to inset(0), scrubbed from top bottom to top 25% (top 50% mobile)", "purpose": "Ink sections open from the page margin to the screen edge." },
+      { "name": "cta-open", "value": "clip-path inset(16% 22%) to inset(0), image 1.3 to 1, scrubbed", "purpose": "Final CTA photo opens from a framed print to full bleed." },
+      { "name": "flip-recompose", "value": "GSAP Flip 1s expo.inOut, stagger 0.025s; leaving: opacity 0, scale 0.94, 0.5s; entering: clip wipe after 0.25s", "purpose": "Portfolio filters recompose the grid along the modules." },
+      { "name": "frame-parallax", "value": "yPercent -6 to 6 scrubbed, desktop only", "purpose": "Parallax only inside photo frames." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "No Lenis or smooth scroll, no reveal initial states, all process steps lit, filters relayout instantly, lightbox opacity changes at 0.01s." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "600px" },
+      { "name": "md", "value": "900px" },
+      { "name": "nav", "value": "1024px" },
+      { "name": "wide", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Primary action; vermilion fill sweeps in from the left on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Solicitar orçamento</a>",
+      "css": ".ds-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: 0 30px; background: var(--ink, #0f0f0e); color: var(--paper, #f1efea); font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; font-weight: 560; font-size: 1rem; letter-spacing: 0.005em; text-decoration: none; overflow: hidden; isolation: isolate; border-radius: 0; transition: color 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--accent, #c4391f); transform: scaleX(0); transform-origin: right; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover::before, .ds-btn:focus-visible::before { transform: scaleX(1); transform-origin: left; } .ds-btn:focus-visible { outline: 2px solid var(--accent, #c4391f); outline-offset: 3px; } .ds-btn:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Paper Button",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Primary action on ink grounds and photos.",
+      "html": "<div style=\"background:#0f0f0e;padding:24px\"><a class=\"ds-btn-paper\" href=\"#\">Vamos conversar?</a></div>",
+      "css": ".ds-btn-paper { position: relative; display: inline-flex; align-items: center; min-height: 56px; padding: 0 30px; background: #f1efea; color: #0f0f0e; font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; font-weight: 560; text-decoration: none; overflow: hidden; isolation: isolate; transition: color 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn-paper::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #e0573c; transform: scaleX(0); transform-origin: right; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); } .ds-btn-paper:hover { color: #f1efea; } .ds-btn-paper:hover::before, .ds-btn-paper:focus-visible::before { transform: scaleX(1); transform-origin: left; } .ds-btn-paper:focus-visible { outline: 2px solid #e0573c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Paper Button",
+      "kind": "button",
+      "refersTo": "button-outline-paper",
+      "description": "Secondary action over photos and ink.",
+      "html": "<div style=\"background:#0f0f0e;padding:24px\"><a class=\"ds-btn-outline\" href=\"#\">Solicitar orçamento</a></div>",
+      "css": ".ds-btn-outline { position: relative; display: inline-flex; align-items: center; min-height: 56px; padding: 0 30px; background: transparent; color: #f1efea; box-shadow: inset 0 0 0 1px rgb(241 239 234 / 0.5); font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; font-weight: 560; text-decoration: none; overflow: hidden; isolation: isolate; } .ds-btn-outline::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #e0573c; transform: scaleX(0); transform-origin: right; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); } .ds-btn-outline:hover::before, .ds-btn-outline:focus-visible::before { transform: scaleX(1); transform-origin: left; } .ds-btn-outline:focus-visible { outline: 2px solid #e0573c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Underlined Link",
+      "kind": "custom",
+      "refersTo": "link-line",
+      "description": "Secondary action beside every primary button; vermilion underline retracts on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">Explorar portfólio <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-link { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 6px 0; color: #0f0f0e; font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; font-weight: 560; text-decoration: none; } .ds-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #c4391f; transform-origin: left; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); } .ds-link:hover::after { transform: scaleX(0); transform-origin: right; } .ds-link svg { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-link:hover svg { transform: translateX(5px); } .ds-link:focus-visible { outline: 2px solid #c4391f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Category Filter",
+      "kind": "chip",
+      "refersTo": "filter",
+      "description": "Portfolio filters in light Jost with counts; active gets a 3px vermilion underline.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-filter\" aria-pressed=\"true\"><span class=\"ds-filter-label\">tudo</span><sup>24</sup></button><button class=\"ds-filter\" aria-pressed=\"false\"><span class=\"ds-filter-label\">retratos</span><sup>8</sup></button><button class=\"ds-filter\" aria-pressed=\"false\"><span class=\"ds-filter-label\">casamentos</span><sup>5</sup></button></div>",
+      "css": ".ds-filters { display: flex; flex-wrap: wrap; gap: 4px 32px; border-top: 1px solid rgb(15 15 14 / 0.18); padding-top: 18px; } .ds-filter { display: inline-flex; align-items: flex-start; gap: 4px; padding: 6px 0; background: none; border: 0; cursor: pointer; font-family: 'Jost Variable', 'Jost', 'Futura', sans-serif; font-size: 2rem; font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; color: #5c5b57; transition: color 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-filter sup { font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0; position: relative; top: 0.25em; } .ds-filter:hover, .ds-filter[aria-pressed='true'] { color: #0f0f0e; } .ds-filter-label { position: relative; } .ds-filter-label::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px; background: #c4391f; transform: scaleX(0); transform-origin: right; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); } .ds-filter[aria-pressed='true'] .ds-filter-label::after { transform: scaleX(1); transform-origin: left; } .ds-filter:focus-visible { outline: 2px solid #c4391f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Square field with a bottom ink line that turns vermilion on focus.",
+      "html": "<label class=\"ds-field\"><span>Nome</span><input type=\"text\" placeholder=\"Como posso te chamar?\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; } .ds-field span { font-weight: 600; font-size: 0.9375rem; } .ds-field input { width: 100%; min-height: 52px; padding: 12px 14px; background: transparent; border: 0; border-bottom: 1px solid #0f0f0e; border-radius: 0; font: inherit; font-size: 1rem; color: #0f0f0e; transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s; } .ds-field input::placeholder { color: #5c5b57; } .ds-field input:hover { background: rgb(15 15 14 / 0.03); } .ds-field input:focus { outline: none; border-color: #c4391f; box-shadow: inset 0 -2px 0 #c4391f; background: rgb(15 15 14 / 0.03); }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "link-line",
+      "description": "12-column header: brand, links with hover underline, current item in vermilion, small ink button.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">nome sobrenome</a><nav><a class=\"ds-nav-link is-current\" href=\"#\">portfólio</a><a class=\"ds-nav-link\" href=\"#\">projetos</a><a class=\"ds-nav-link\" href=\"#\">sobre</a><a class=\"ds-nav-link\" href=\"#\">serviços</a></nav><a class=\"ds-nav-cta\" href=\"#\">Solicitar orçamento</a></header>",
+      "css": ".ds-nav { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 32px; height: 68px; padding: 0 32px; background: #f1efea; color: #0f0f0e; box-shadow: 0 1px 0 rgb(15 15 14 / 0.18); font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; } .ds-brand { font-family: 'Jost Variable', 'Jost', sans-serif; font-weight: 700; font-size: 1.375rem; letter-spacing: -0.03em; color: inherit; text-decoration: none; } .ds-nav nav { display: flex; gap: 28px; } .ds-nav-link { position: relative; padding: 8px 0; font-size: 0.9375rem; font-weight: 500; color: inherit; text-decoration: none; } .ds-nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover::after, .ds-nav-link.is-current::after { transform: scaleX(1); transform-origin: left; } .ds-nav-link.is-current::after { background: #c4391f; height: 2px; } .ds-nav-link:focus-visible { outline: 2px solid #c4391f; outline-offset: 3px; } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 42px; padding: 0 18px; background: #0f0f0e; color: #f1efea; font-weight: 560; font-size: 0.875rem; text-decoration: none; } .ds-nav-cta:hover { background: #c4391f; }"
+    },
+    {
+      "name": "Module Grid Section",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Signature: visible 12-column lines with module numbers behind a lowercase display title offset by one module.",
+      "html": "<section class=\"ds-grid\"><div class=\"ds-lines\" aria-hidden=\"true\"><i><b>01</b></i><i><b>02</b></i><i><b>03</b></i><i><b>04</b></i><i><b>05</b></i><i><b>06</b></i><i><b>07</b></i><i><b>08</b></i><i><b>09</b></i><i><b>10</b></i><i><b>11</b></i><i><b>12</b></i></div><h2 class=\"ds-display\">projetos <span>em destaque</span></h2></section>",
+      "css": ".ds-grid { position: relative; padding: 64px 24px; background: #f1efea; color: #0f0f0e; } .ds-lines { position: absolute; inset: 0 24px; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 14px; pointer-events: none; } .ds-lines i { position: relative; border-left: 1px solid rgb(15 15 14 / 0.075); } .ds-lines i:last-child { border-right: 1px solid rgb(15 15 14 / 0.075); } .ds-lines b { position: absolute; top: 14px; left: 6px; font-family: 'Hanken Grotesk Variable', system-ui, sans-serif; font-size: 0.625rem; font-weight: 500; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; color: rgb(15 15 14 / 0.18); } .ds-display { position: relative; font-family: 'Jost Variable', 'Jost', 'Futura', sans-serif; font-weight: 720; font-size: 4rem; line-height: 0.92; letter-spacing: -0.04em; text-transform: lowercase; margin: 0; } .ds-display span { display: block; padding-left: calc((100% - 11 * 14px) / 12 + 14px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Concrete Poem",
+    "overview": "Brazilian concrete poetry and Bienal posters are the source. Every word block and every photograph is placed on one rigorous 12-column module grid, and the grid itself is visible: faint hairline column rules with tiny tabular module numbers (01 to 12) sitting at the top of each line. Empty modules are part of the composition; the page is allowed to leave whole columns unfilled so the photographs can lead.\n\nThe material is flat graphite ink on off-white paper. Dark sections are the same ink inverted, never a second palette. Words are heavy, tight, lowercase grotesk stacked in short lines and offset from one another by whole modules, like a poem set in metal type. Photographs are hard-edged rectangles snapped to column spans, with no rounding, no frames and no shadows. A single vermilion is rationed to marks of state: the active filter, the current nav item, the primary underline, focus, scroll progress, errors.\n\nMotion speaks the same grammar as the layout: things arrive along the modules. Photos are uncovered slat by slat, one column at a time; words rise out of masks; images wipe in with clip-path; ink sections open from the page margin to the screen edge; the portfolio recomposes along the grid when filtered. Everything uses transform, opacity and clip-path on an expo curve, and all of it collapses to a still, fully legible page under reduced motion.",
+    "keyCharacteristics": [
+      "Visible 12-column grid with module numbers on the lines; 4 lines remain below 900px.",
+      "Lowercase heavy Jost display (700 to 780) stacked and offset by whole modules.",
+      "Paper and ink as the only two grounds; ink sections invert the same tokens.",
+      "One vermilion, used only for active state and the primary underline.",
+      "Square everything: radius 0 on photos, buttons, fields, panels.",
+      "Module-stepped motion (slats, masks, clip wipes, FLIP) with a full reduced-motion fallback."
+    ],
+    "rules": [
+      { "name": "The One Mark Rule", "body": "Vermilion marks state or the single primary underline. If a vermilion element does not say \"this is active, focused, wrong, or the way forward\", it is wrong.", "section": "colors" },
+      { "name": "The Same Ink Rule", "body": "A dark section is `data-theme=\"ink\"`: the ground becomes ink, foreground becomes paper, secondary becomes ink gray, lines and accent swap to their ink variants. No other dark palette exists.", "section": "colors" },
+      { "name": "The Lowercase Poem Rule", "body": "Display text is lowercase, stacked in short lines, and each line is offset by whole modules (one column plus one gutter, or multiples). Words, not sentences.", "section": "typography" },
+      { "name": "The Weight Ladder Rule", "body": "Jost lives at 780 / 760 / 720 for display, 680 for section-level headings, 500 for the light voice. Nothing in between is invented per element.", "section": "typography" },
+      { "name": "The Module Rule", "body": "Every photo edge and every offset lands on a column line. Offsets are counted in columns plus gutters, not in arbitrary pixels.", "section": "layout" },
+      { "name": "The Visible Grid Rule", "body": "The grid is shown, not hidden: faint lines and module numbers sit behind every grid section, and empty modules are composition, not leftover space.", "section": "layout" },
+      { "name": "The Flat Paper Rule", "body": "Surfaces never float. If something needs separation, use a hairline rule, an ink inversion, or empty modules.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do place every photo and word block on the 12 columns and express offsets as whole modules (column plus gutter).",
+      "Do show the grid lines and module numbers behind grid sections, reducing to four lines below 900px.",
+      "Do set display text lowercase in Jost at 700 to 780, tight (-0.04em), stacked and offset.",
+      "Do keep vermilion (#c4391f, #e0573c on ink) for active state, focus, errors and the primary underline only.",
+      "Do build dark sections by switching to the ink theme, not by adding colors.",
+      "Do reveal along the modules: slats per column, words rising from masks, clip-path wipes, ink sections opening from the margin to the edge, FLIP recomposition.",
+      "Do animate only transform, opacity and clip-path with expo curves (cubic-bezier(0.16, 1, 0.3, 1) and cubic-bezier(0.77, 0, 0.18, 1)).",
+      "Do give every motion a reduced-motion state: no smooth scroll, no reveals, all content and process steps visible, filters and lightbox switch instantly."
+    ],
+    "donts": [
+      "Don't round corners or add drop shadows to photos, buttons, fields or panels.",
+      "Don't use vermilion as a section ground, a decorative fill or a second accent.",
+      "Don't set display text in title case or sentence-long headlines.",
+      "Don't let photos float off the columns or arrange them as a free masonry wall.",
+      "Don't put parallax on running text; parallax lives inside photo frames."
+    ]
+  }
+}

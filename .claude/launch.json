@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fotografo-landing",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "D:/Projetos/fotografo-landing", "--", "--port", "5179", "--strictPort"],
+      "port": 5179
+    }
+  ]
+}
